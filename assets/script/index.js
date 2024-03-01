@@ -48,17 +48,17 @@ function getBrowser() {
     let browserName = window.navigator.userAgent;
 
     if (browserName.includes("Firefox")) {
-        browser.innerText = "Firefox";
+        browser.innerText = "Browser: Firefox";
     } else if (browserName.includes("Edg")) {
-        browser.innerText = "Edge";
+        browser.innerText = "Browser: Edge";
     } else if (browserName.includes("Chrome")) {
-        browser.innerText = "Chrome";
+        browser.innerText = "Browser: Chrome";
     } else if (browserName.includes("Safari")) {
-        browser.innerText = "Safari";
+        browser.innerText = "Browser: Safari";
     } else if (browserName.includes("Opera") || browserName.includes("OPR")) {
-        browser.innerText = "Opera";
+        browser.innerText = "Browser: Opera";
     } else {
-        browser.innerText = "Unknown"
+        browser.innerText = "Browser: Unknown"
     }
 }
 
