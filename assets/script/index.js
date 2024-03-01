@@ -23,44 +23,38 @@ const getSystem = () => {
 }
 
 const getOperatingSystem = () => {
+    const osMap = {
+        "Windows": "Windows",
+        "Mac": "Mac OS",
+        "Linux": "Linux",
+        "Android": "Android",
+        "iOS": "iOS"
+    };
+    
     let Opsystem = window.navigator.userAgent;
-
-    if (Opsystem.includes("Windows")) {
-        operatingSystem.innerText = 'OS: Windows'
-    } else if (Opsystem.includes("Mac")) {
-        operatingSystem.innerText = 'OS: Mac OS'
-    } else if (Opsystem.includes("Linux")) {
-        operatingSystem.innerText = 'OS: Linux'
-    }else if (Opsystem.includes("Android")) {
-        operatingSystem.innerText = 'OS: Android'
-    } else if (Opsystem.includes("iOS")) {
-        operatingSystem.innerText = 'OS: iOS'
-    } else {
-        operatingSystem.innerText = 'Unknown'
-    }
-}
+    let detectedOS = Object.keys(osMap).find(os => Opsystem.includes(os)) || 'Unknown';
+    operatingSystem.innerText = `OS: ${osMap[detectedOS]}`;
+} //got from chatGPT
 
 const getLanguage = () => {
     language.innerText = `Language: ${navigator.language}`
 }
 
 function getBrowser() {
-    let browserName = window.navigator.userAgent;
+    const browserMap = {
+        "Firefox": "Firefox",
+        "Edg": "Edge",
+        "Chrome": "Chrome",
+        "Safari": "Safari",
+        "Opera": "Opera",
+        "OPR": "Opera"
+    };
 
-    if (browserName.includes("Firefox")) {
-        browser.innerText = "Browser: Firefox";
-    } else if (browserName.includes("Edg")) {
-        browser.innerText = "Browser: Edge";
-    } else if (browserName.includes("Chrome")) {
-        browser.innerText = "Browser: Chrome";
-    } else if (browserName.includes("Safari")) {
-        browser.innerText = "Browser: Safari";
-    } else if (browserName.includes("Opera") || browserName.includes("OPR")) {
-        browser.innerText = "Browser: Opera";
-    } else {
-        browser.innerText = "Browser: Unknown"
-    }
-}
+    let browserName = window.navigator.userAgent;
+    let detectedBrowser = Object.keys(browserMap).find(browser => 
+        browserName.includes(browser)) || 'Unknown';
+    browser.innerText = `Browser: ${browserMap[detectedBrowser]}`;
+} //got from chatGPT
 
 //window
 
